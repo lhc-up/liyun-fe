@@ -7,7 +7,6 @@
         "check-types": "tsc --noEmit"
     },
     "devDependencies": {
-        "@liyun/eslint-config": "workspace:*",
         "@liyun/typescript-config": "workspace:*",
         "typescript": "5.5.4"
     }

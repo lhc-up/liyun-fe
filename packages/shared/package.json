@@ -1,0 +1,23 @@
+{
+    "name": "@liyun/shared",
+    "version": "0.0.0",
+    "private": true,
+    "exports": {
+        "./utils": {
+            "import": "./dist/utils/index.mjs",
+            "require": "./dist/utils/index.js"
+        },
+        "./types": {
+            "import": "./dist/types/index.d.ts",
+            "require": "./dist/types/index.d.ts"
+        }
+    },
+    "scripts": {
+        "prepare": "pnpm run build",
+        "dev": "tsup --watch",
+        "build": "tsup"
+    },
+    "devDependencies": {
+        "tsup": "^8.3.5"
+    }
+}

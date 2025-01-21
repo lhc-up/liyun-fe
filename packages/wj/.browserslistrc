@@ -1,0 +1,10 @@
+# Browsers that we support
+
+defaults
+Android 4.1
+iOS 7.1
+Chrome>49
+ff>50
+ie>=11
+last 2 versions
+>0.2%

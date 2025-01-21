@@ -2,6 +2,7 @@
     "name": "liyun-fe",
     "private": true,
     "scripts": {
+        "preinstall": "npx only-allow pnpm",
         "build": "turbo build",
         "dev": "turbo dev",
         "lint": "turbo lint",
