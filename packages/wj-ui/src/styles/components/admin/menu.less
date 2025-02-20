@@ -1,0 +1,33 @@
+@menu-prefix: ~'@{css-prefix}menu';
+
+.@{menu-prefix} {
+    height: 100%;
+    overflow-y: auto;
+    &-item {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        font-size: @font-size-base;
+        color: @text-color;
+        background-color: #e9eff3;
+        cursor: pointer;
+        // fix: 拖拽时圆角实效的问题
+        transform: translate(0, 0);
+        &:hover:not([disabled=true]) {
+            background-color: @primary-color;
+            color: @white;
+        }
+        &[disabled=true] {
+            cursor: default;
+        }
+        &-icon {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
