@@ -1,22 +1,25 @@
 <template>
-    <div :class="classes">
+    <div :class="prefixCls">
         <div v-for="menu in menuList"
             @click="onclick(menu)"
+            @dragstart="onDragstart(menu, $event)"
+            @dragend="onDragend"
             :key="menu.value"
             :class="`${prefixCls}-item`"
             :disabled="disabled"
             :draggable="!disabled && dragable">
-            <div :class="`${prefixCls}-item-icon`" :style="{
-                background: `url(${require(`@/assets/question_type_icon_${menu.value}.png`)}) no-repeat center / contain`,
-            }"></div>
+            <div :class="[`${prefixCls}-item-icon`, `${prefixCls}-item-icon-${menu.value}`]"></div>
             <div :class="`${prefixCls}-item-text`">{{ QuestionNameMap[menu.value] }}</div>
         </div>
     </div>
 </template>
 <script setup lang="ts">
-import { computed } from 'vue';
-import { QuestionTypeEnum, QuestionNameMap } from '@/enums/question';
-import { enumToObjList } from '@/utils/utils';
+import { QuestionTypeEnum, QuestionNameMap } from '../../../enums/question';
+import { enumToObjList } from '../../../utils/utils';
+import { DragTypeEnum } from '../../../enums/event';
+import { DRAG_DATA_KEY, PREFIX_CLS } from '../../../utils/constant';
+// 类名前缀
+const prefixCls: string = `${PREFIX_CLS}menu`;
 
 const props = defineProps({
     disabled: {
@@ -33,22 +36,23 @@ const props = defineProps({
     }
 });
 
-const prefixCls: string = 'wj-menu';
-const classes = computed(() => {
-    return [
-        prefixCls,
-        {
-            [`${prefixCls}-disabled`]: false,
-        }
-    ]
-});
-
 const menuList: any[] = enumToObjList(QuestionTypeEnum);
 
 const onclick = (menu) => {
     if (props.disabled || !props.clickable) return;
     console.log(menu)
     emit('on-click');
+}
+
+const onDragstart = (menu, e) => {
+    if (props.disabled || !props.dragable) return;
+    e.dataTransfer.setData(DRAG_DATA_KEY, JSON.stringify({
+        type: DragTypeEnum.QuestionMenu,
+        ...menu,
+    }));
+}
+const onDragend = e => {
+    if (props.disabled || !props.dragable) return;
 }
 
 const emit = defineEmits(['on-click']);

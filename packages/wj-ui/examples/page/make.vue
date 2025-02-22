@@ -3,11 +3,21 @@
         <div class="menu">
             <Menu></Menu>
         </div>
-        <div class="main"></div>
+        <div class="main">
+            <DropArea fixed>
+                <!-- 单题预览 -->
+                <!-- 多题预览，支持拖拽排序、插入 -->
+            </DropArea>
+        </div>
+        <!-- 出题抽屉 -->
+        <Drawer>
+            <AddQuestion></AddQuestion>
+        </Drawer>
     </div>
 </template>
 <script setup lang="ts">
-import { Menu } from '@liyun/wj-ui';
+import { Menu, DropArea, AddQuestion } from '@liyun/wj-ui';
+import Drawer from '../components/drawer.vue';
 </script>
 <style lang="less" scoped>
 .make {
@@ -16,7 +26,6 @@ import { Menu } from '@liyun/wj-ui';
     height: 100%;
     display: flex;
     padding: 10px;
-    background-color: #cdcdcd;
     .menu {
         width: 100px;
         padding: 10px;
@@ -26,6 +35,7 @@ import { Menu } from '@liyun/wj-ui';
     }
     .main {
         flex: 1;
+        position: relative;
         background-color: #fff;
         border-radius: 6px;
     }

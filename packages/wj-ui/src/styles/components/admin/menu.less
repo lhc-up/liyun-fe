@@ -11,12 +11,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-radius: 5px;
+        border-radius: @border-radius-small;
         font-size: @font-size-base;
         color: @text-color;
         background-color: #e9eff3;
         cursor: pointer;
-        // fix: 拖拽时圆角实效的问题
+        // fix: 修复拖拽时圆角失效的问题
         transform: translate(0, 0);
         &:hover:not([disabled=true]) {
             background-color: @primary-color;
@@ -31,3 +31,16 @@
         }
     }
 }
+
+// icon类名
+// 这里列出所有的icon编号，然后循环生成样式，不要按数量循环，避免中间序号不连续
+@iconNums: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11;
+@len: length(@iconNums);
+.menuIcon(@i:1) when(@i <= @len) {
+    @num: extract(@iconNums, @i);
+    .@{menu-prefix}-item-icon-@{num} {
+        background: url('~@/assets/images/question_type_icon_@{num}.png') no-repeat center / contain;
+    }
+    .menuIcon(@i + 1);
+}
+.menuIcon();

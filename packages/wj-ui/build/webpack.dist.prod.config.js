@@ -10,7 +10,7 @@ process.env.NODE_ENV = 'production';
 module.exports = merge(webpackBaseConfig, {
     devtool: 'source-map',
     entry: {
-        main: './src/index.js'
+        main: './src/index.ts'
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
@@ -32,16 +32,16 @@ module.exports = merge(webpackBaseConfig, {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"production"'
         }),
-        new UglifyJsPlugin({
-            parallel: true,
-            sourceMap: true
-        }),
-        new CompressionPlugin({
-            asset: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: /\.(js|css)$/,
-            threshold: 10240,
-            minRatio: 0.8
-        })
+        // new UglifyJsPlugin({
+        //     parallel: true,
+        //     sourceMap: true
+        // }),
+        // new CompressionPlugin({
+        //     asset: '[path].gz[query]',
+        //     algorithm: 'gzip',
+        //     test: /\.(js|css)$/,
+        //     threshold: 10240,
+        //     minRatio: 0.8
+        // })
     ]
 });

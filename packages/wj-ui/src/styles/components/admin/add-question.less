@@ -1,0 +1,33 @@
+@add-question-prefix: ~'@{css-prefix}add-question';
+
+.@{add-question-prefix} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &-header {
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: @heading-color;
+        font-size: 18px;
+        .border-base(-bottom);
+        &-btns {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            padding: 0 @padding-xs;
+            .flex-center();
+        }
+    }
+    &-footer {
+        height: 80px;
+        .flex-center();
+        .border-base(-top);
+    }
+    &-main {
+        flex: 1;
+    }
+}

@@ -9,7 +9,7 @@
 <script setup lang="ts">
 
 </script>
-<style lang="css" scoped>
+<style lang="less" scoped>
 .page {
     position: absolute;
     top: 0;
@@ -20,6 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #f0f2f5;
 }
 header {
     width: 100%;
@@ -28,7 +29,8 @@ header {
     text-align: center;
     font-size: 22px;
     font-weight: bold;
-    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow:  0 1px 6px rgba(0, 0, 0, 0.2);
 }
 main {
     flex: 1;

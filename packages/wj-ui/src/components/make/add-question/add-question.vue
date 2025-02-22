@@ -1,0 +1,55 @@
+<template>
+    <div :class="prefixCls">
+        <div :class="`${prefixCls}-header`">
+            <span>单选题</span>
+            <div :class="`${prefixCls}-header-btns`">
+                <Space>
+                    <Button size="small" type="primary" ghost>切换题型</Button>
+                    <Button type="text" shape="circle">
+                        <CloseOutlined />
+                    </Button>
+                </Space>
+            </div>
+        </div>
+        <div :class="`${prefixCls}-main`">
+            <SingleChoice></SingleChoice>
+        </div>
+        <div :class="`${prefixCls}-footer`">
+            <Space>
+                <Button @click="cancel">取消</Button>
+                <Button @click="ok" type="primary">保存</Button>
+                <Button @click="next" type="primary" ghost>保存并录入下一题</Button>
+            </Space>
+        </div>
+    </div>
+</template>
+<script setup lang="ts">
+import { h } from 'vue-demi';
+import { PREFIX_CLS } from '../../../utils/constant';
+import { SingleChoice } from '../question';
+import { CloseOutlined } from '@ant-design/icons-vue';
+import { Button, Space } from 'ant-design-vue';
+
+const prefixCls: string = `${PREFIX_CLS}add-question`;
+
+const cancel = () => {
+    console.log('cancel');
+    close();
+};
+const ok = () => {
+    console.log('ok');
+};
+const next = () => {
+    console.log('next');
+};
+// 切换题型
+const switchType = () => {
+    console.log('switchType');
+};
+const close = () => {
+    console.log('close');
+};
+const reset = () => {
+    console.log('reset');
+};
+</script>
