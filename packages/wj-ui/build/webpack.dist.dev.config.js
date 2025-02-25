@@ -8,7 +8,7 @@ process.env.NODE_ENV = 'production';
 module.exports = merge(webpackBaseConfig, {
     devtool: 'source-map',
     entry: {
-        main: './src/index.js'
+        main: './src/index.ts'
     },
     output: {
         path: path.resolve(__dirname, '../dist'),

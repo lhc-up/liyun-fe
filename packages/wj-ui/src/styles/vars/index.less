@@ -18,6 +18,8 @@
 @rate-star-color: #f5a623;
 @white: #fff;
 @black: #000;
+@disabled-color: rgba(0, 0, 0, 0.25);
+@disabled-bg: rgba(0, 0, 0, 0.04);
 
 // Base
 @body-background: #fff;
@@ -74,49 +76,6 @@
 @shadow-down: 0 1px 6px @shadow-color;
 @shadow-left: -1px 0 6px @shadow-color;
 @shadow-right: 1px 0 6px @shadow-color;
-
-// Button
-@btn-height-base: 32px;
-@btn-height-large: 40px;
-@btn-height-small: 24px;
-
-@btn-padding-base: 0 @padding-md - 1px;
-@btn-padding-large: @btn-padding-base;
-@btn-padding-small: 0 @padding-xs - 1px;
-
-@btn-font-weight: normal;
-@btn-padding-base-icon: 5px 15px 6px;
-@btn-padding-large-icon: 6px 15px 6px 15px;
-@btn-padding-small-icon: 1px 7px 2px;
-@btn-font-size: @font-size-base;
-@btn-font-size-large: @font-size-large;
-@btn-font-size-small: @font-size-base;
-@btn-border-radius: 4px;
-@btn-border-radius-small: 3px;
-@btn-group-border: shade(@primary-color, 5%);
-
-@btn-disable-color: #c5c8ce;
-@btn-disable-bg: @background-color-base;
-@btn-disable-border: @border-color-base;
-
-@btn-default-color: @text-color;
-@btn-default-bg: #fff;
-@btn-default-border: @border-color-base;
-
-@btn-primary-color: #fff;
-@btn-primary-bg: @primary-color;
-
-@btn-ghost-color: @text-color;
-@btn-ghost-bg: #fff;
-@btn-ghost-border: @border-color-base;
-
-@btn-circle-size: @btn-height-base;
-@btn-circle-size-large: @btn-height-large;
-@btn-circle-size-small: @btn-height-small;
-
-@btn-square-size: @btn-height-base;
-@btn-square-size-large: @btn-height-large;
-@btn-square-size-small: @btn-height-small;
 
 // Layout and Grid
 @grid-columns: 24;
@@ -242,3 +201,5 @@
 @list-item-meta-margin-bottom: @padding-md;
 @list-item-meta-avatar-margin-right: @padding-md;
 @list-item-meta-title-margin-bottom: @padding-sm;
+
+@import "button";

@@ -60,7 +60,12 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+                    devMode ? "style-loader" : {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: "./",
+                        },
+                    },
                     {
                         loader: "css-loader",
                         options: {
@@ -72,7 +77,12 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: [
-                    devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+                    devMode ? "style-loader" : {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: "./",
+                        },
+                    },
                     {
                         loader: "css-loader",
                         options: {
@@ -91,7 +101,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+                test: /\.(gif|jpg|png|woff|woff2|svg|eot|ttf)\??.*$/,
                 type: "asset/resource",
             },
             {

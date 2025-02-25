@@ -28,7 +28,9 @@ import { h } from 'vue-demi';
 import { PREFIX_CLS } from '../../../utils/constant';
 import { SingleChoice } from '../question';
 import { CloseOutlined } from '@ant-design/icons-vue';
-import { Button, Space } from 'ant-design-vue';
+import { Space } from 'ant-design-vue';
+import Button from '../../common/button';
+import Icon from '../../common/icon';
 
 const prefixCls: string = `${PREFIX_CLS}add-question`;
 
