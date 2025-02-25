@@ -19,10 +19,10 @@ gulp.task('css', function (done) {
 });
 
 // 拷贝字体文件
-// gulp.task('fonts', function () {
-//     gulp.src('../src/styles/common/iconfont/fonts/*.*').pipe(
-//         gulp.dest('../dist/styles/fonts')
-//     );
-// });
+gulp.task('fonts', function () {
+    gulp.src('../src/styles/common/iconfont/fonts/*.*').pipe(
+        gulp.dest('../dist/styles/fonts')
+    );
+});
 
-gulp.task('default', gulp.series('css'));
+gulp.task('default', gulp.series('css', 'fonts'));

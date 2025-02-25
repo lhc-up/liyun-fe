@@ -2,7 +2,7 @@
     "name": "@liyun/wj-ui",
     "private": true,
     "version": "0.0.0",
-    "main": "dist/wjui.js",
+    "main": "dist/wjui.min.js",
     "scripts": {
         "dev": "webpack serve --open --hot -c build/webpack.dev.config.js",
         "build": "webpack --config build/webpack.dev.config.js",
