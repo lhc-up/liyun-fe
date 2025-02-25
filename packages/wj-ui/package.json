@@ -2,13 +2,15 @@
     "name": "@liyun/wj-ui",
     "private": true,
     "version": "0.0.0",
-    "main": "dist/wjui.min.js",
+    "main": "dist/wjui.js",
     "scripts": {
         "dev": "webpack serve --open --hot -c build/webpack.dev.config.js",
         "build": "webpack --config build/webpack.dev.config.js",
         "dist:style": "gulp --gulpfile build/build-style.mjs",
         "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
-        "dist:prod": "webpack --config build/webpack.dist.prod.config.js"
+        "dist:prod": "webpack --config build/webpack.dist.prod.config.js",
+        "dist": "npm run dist:dev && npm run dist:prod && npm run dist:style",
+        "prepare": "npm run dist"
     },
     "browserslist": [
         "> 0.5%",
@@ -20,6 +22,7 @@
         "@ant-design/icons-vue": "^7.0.1",
         "ant-design-vue": "^4.2.6",
         "is": "^3.3.0",
+        "uuid": "^11.0.5",
         "vue-demi": "^0.14.10",
         "vue-router": "^4.5.0"
     },

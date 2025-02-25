@@ -220,6 +220,9 @@ importers:
       is:
         specifier: ^3.3.0
         version: 3.3.0
+      uuid:
+        specifier: ^11.0.5
+        version: 11.0.5
       vue-demi:
         specifier: ^0.14.10
         version: 0.14.10(@vue/composition-api@1.7.2(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
