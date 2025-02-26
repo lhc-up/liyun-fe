@@ -1,0 +1,42 @@
+// 字体图标，分为两个部分：1、iview的图标；2、wjui的图标（来自iconfont）
+// ----------------------------------------------------------------
+
+// iview icons
+@font-face {
+    font-family: Iviewicons;
+    src:
+        url('./fonts/iview.woff2?v=3.0.0') format('woff2'),
+        url('./fonts/iview.woff?v=3.0.0') format('woff'),
+        url('./fonts/iview.ttf?v=3.0.0') format('truetype'),
+        url('./fonts/iview.svg?v=3.0.0#Ionicons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// wjui icons
+@font-face {
+    font-family: 'wjui-icons'; /* Project id 4837963 */
+    src:
+        url('./fonts/wjui.woff2?t=1740484243266') format('woff2'),
+        url('./fonts/wjui.woff?t=1740484243266') format('woff'),
+        url('./fonts/wjui.ttf?t=1740484243266') format('truetype');
+}
+
+.wj-icon() {
+    display: inline-block;
+    font-family: Iviewicons, 'wjui-icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+}
+
+.wj-icon {
+    .wj-icon();
+}

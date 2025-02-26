@@ -4,7 +4,9 @@
             <span>单选题</span>
             <div :class="`${prefixCls}-header-btns`">
                 <Button size="small" type="primary" ghost>切换题型</Button>
-                <Button icon="md-close"></Button>
+                <Button type="text" shape="circle">
+                    <Icon type="md-close" size="20" />
+                </Button>
             </div>
         </div>
         <div :class="`${prefixCls}-main`">
