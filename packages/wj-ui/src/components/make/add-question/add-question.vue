@@ -3,32 +3,23 @@
         <div :class="`${prefixCls}-header`">
             <span>单选题</span>
             <div :class="`${prefixCls}-header-btns`">
-                <Space>
-                    <Button size="small" type="primary" ghost>切换题型</Button>
-                    <Button type="text" shape="circle">
-                        <CloseOutlined />
-                    </Button>
-                </Space>
+                <Button size="small" type="primary" ghost>切换题型</Button>
+                <Button icon="md-close"></Button>
             </div>
         </div>
         <div :class="`${prefixCls}-main`">
             <SingleChoice></SingleChoice>
         </div>
         <div :class="`${prefixCls}-footer`">
-            <Space>
-                <Button @click="cancel">取消</Button>
-                <Button @click="ok" type="primary">保存</Button>
-                <Button @click="next" type="primary" ghost>保存并录入下一题</Button>
-            </Space>
+            <Button @click="cancel">取消</Button>
+            <Button @click="ok" type="primary">保存</Button>
+            <Button @click="next" type="primary" ghost>保存并录入下一题</Button>
         </div>
     </div>
 </template>
 <script setup lang="ts">
-import { h } from 'vue-demi';
 import { PREFIX_CLS } from '../../../utils/constant';
 import { SingleChoice } from '../question';
-import { CloseOutlined } from '@ant-design/icons-vue';
-import { Space } from 'ant-design-vue';
 import Button from '../../common/button';
 import Icon from '../../common/icon';
 

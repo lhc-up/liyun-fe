@@ -1,7 +1,6 @@
 {
-    "name": "@liyun/wj-ui",
-    "private": true,
-    "version": "0.0.0",
+    "name": "liyun-wj-ui",
+    "version": "0.0.1",
     "main": "dist/wjui.js",
     "scripts": {
         "dev": "webpack serve --open --hot -c build/webpack.dev.config.js",
@@ -19,8 +18,6 @@
         "not dead"
     ],
     "dependencies": {
-        "@ant-design/icons-vue": "^7.0.1",
-        "ant-design-vue": "^4.2.6",
         "is": "^3.3.0",
         "uuid": "^11.0.5",
         "vue-demi": "^0.14.10",
@@ -36,6 +33,7 @@
         }
     },
     "devDependencies": {
+        "@ant-design/icons-vue": "^7.0.1",
         "@babel/core": "^7.26.0",
         "@babel/plugin-proposal-function-bind": "^7.25.9",
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
@@ -43,6 +41,7 @@
         "@babel/preset-env": "^7.26.0",
         "@liyun/typescript-config": "workspace:^",
         "@types/node": "^22.13.1",
+        "ant-design-vue": "^4.2.6",
         "babel-loader": "^9.2.1",
         "compression-webpack-plugin": "^11.1.0",
         "core-js": "^3.40.0",

@@ -3,18 +3,20 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits, computed } from 'vue-demi';
+import { defineProps, defineEmits, computed, withDefaults } from 'vue-demi';
 import { PREFIX_CLS } from '../../../utils/constant';
 
 const prefixCls = `${PREFIX_CLS}icon`;
 
 // 定义 props 的类型
-const props = defineProps<{
+const props = withDefaults(defineProps<{
     type?: string;
     size?: number | string;
     color?: string;
     custom?: string;
-}>();
+}>(), {
+    custom: '',
+});
 
 // 定义 emits 的类型
 const emits = defineEmits<{

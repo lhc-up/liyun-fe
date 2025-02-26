@@ -17,12 +17,12 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits, ref, onMounted, computed, useSlots } from 'vue-demi';
+import { defineProps, defineEmits, ref, onMounted, computed, useSlots, withDefaults } from 'vue-demi';
 import { PREFIX_CLS } from '../../../utils/constant';
 import Icon from '../icon';
 
 // 定义 props 类型
-const props = defineProps<{
+const props = withDefaults(defineProps<{
     type?:
         | 'default'
         | 'primary'
@@ -44,7 +44,10 @@ const props = defineProps<{
     to?: string;
     linkUrl?: string;
     target?: string;
-}>();
+}>(), {
+    type: 'default',
+    size: 'default',
+});
 
 // 定义 emits 类型
 const emits = defineEmits<{

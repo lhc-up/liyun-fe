@@ -18,6 +18,10 @@ module.exports = merge(webpackBaseConfig, {
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
+    optimization: {
+        minimize: false,
+        minimizer: [],
+    },
     externals: {
         vue: {
             root: 'Vue',
