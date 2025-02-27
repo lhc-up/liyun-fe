@@ -1,0 +1,3 @@
+{
+    "extends": "@liyun/typescript-config/base.json"
+}

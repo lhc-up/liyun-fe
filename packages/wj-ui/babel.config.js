@@ -13,7 +13,8 @@ module.exports = api => {
         "plugins": [
             "@babel/syntax-dynamic-import",
             "@babel/proposal-function-bind",
-            "@babel/plugin-transform-class-properties"
+            "@babel/plugin-transform-class-properties",
+            "@vue/babel-plugin-jsx"
         ]
     }
 }

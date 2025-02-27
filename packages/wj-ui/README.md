@@ -14,3 +14,10 @@
 
 
 ## 字体图标
+
+## 多个版本依赖
+pnpm add vue2@npm:vue@2.6 -D
+pnpm add vue2.7@npm:vue@2.7 -D
+pnpm add vue3@npm:vue@3 -D
+pnpm add vue-loader2@npm:vue-loader@15 -D
+pnpm add vue-loader3@npm:vue-loader@17 -D

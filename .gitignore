@@ -24,7 +24,8 @@ coverage
 # Build Outputs
 .next/
 out/
-dist/
+dist
+dist/*
 
 # Debug
 npm-debug.log*

@@ -18,6 +18,7 @@
         "build": "tsup"
     },
     "devDependencies": {
+        "@liyun/typescript-config": "workspace:^",
         "tsup": "^8.3.5"
     },
     "dependencies": {
