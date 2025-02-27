@@ -21,3 +21,15 @@ pnpm add vue2.7@npm:vue@2.7 -D
 pnpm add vue3@npm:vue@3 -D
 pnpm add vue-loader2@npm:vue-loader@15 -D
 pnpm add vue-loader3@npm:vue-loader@17 -D
+
+分别打包出v2和v3版本，使用方按需引入
+
+修改package.json，暴露v2、v3，方便使用时引入
+
+导出类型？
+
+规整依赖
+
+报名scope？
+
+example工程

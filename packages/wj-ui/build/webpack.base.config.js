@@ -5,7 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const pkg = require('../package.json');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { VueLoaderPlugin } = require("vue-loader");
+const { isVue2 } = require('vue-demi');
 
 function resolve (dir) {
     return path.join(__dirname, '..', dir);
@@ -16,12 +16,10 @@ const devMode = process.env.NODE_ENV === "development";
 module.exports = {
     // 加载器
     module: {
-        // https://doc.webpack-china.org/guides/migrating/#module-loaders-module-rules
         rules: [
             {
-                // https://vue-loader.vuejs.org/en/configurations/extract-css.html
                 test: /\.vue$/,
-                loader: 'vue-loader',
+                loader: `vue-loader${isVue2 ? 2 : 3}`
             },
             {
                 test: /\.js$/,
@@ -107,7 +105,7 @@ module.exports = {
             {
                 test: /\.(html|tpl)$/,
                 loader: 'html-loader'
-            }
+            },
         ]
     },
     resolve: {
@@ -119,11 +117,15 @@ module.exports = {
             '@': resolve('src')
         }
     },
+    optimization: {
+        minimize: false,
+        minimizer: [],
+    },
+    externals: ['vue', 'vue-demi'],
     plugins: [
         new webpack.DefinePlugin({
             'process.env.VERSION': `'${pkg.version}'`
         }),
-        new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename: `[name].css`,
             chunkFilename: `[name].css`,
