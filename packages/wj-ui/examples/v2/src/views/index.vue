@@ -4,7 +4,7 @@
 -->
 <template>
     <div class="frameWrap">
-        <router-view></router-view>
+        <router-link :to="{ name: '/make.html' }">出题</router-link>
     </div>
 </template>
 <script>
@@ -12,27 +12,7 @@ export default {
     data() {
         return {};
     },
-    props: {
-        firstRouter: {
-            type: Object
-        }
-    },
-    methods: {
-        async init() {
-            if (this.firstRouter.path !== '/' && this.firstRouter.name) {
-                if (!this.hasMenuAuth(this.firstRouter, authList)) {
-                    this.$router.replace({ name: '/index.html' });
-                } else {
-                    this.$router.replace(Object.assign({}, this.firstRouter));
-                }
-            } else {
-                this.$router.replace({ name: '/index.html' });
-            }
-        }
-    },
-    mounted() {
-        this.init();
-    }
+    
 };
 </script>
 <style lang="less">

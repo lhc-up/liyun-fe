@@ -33,6 +33,7 @@ pnpm add vue-loader3@npm:vue-loader@17 -D
 包名scope？
 
 example工程
+example中如何实时调试本地包？
 
 
 ### v2.7项目中
@@ -57,3 +58,6 @@ example工程
 
 #### 模版语法
 - `v-model:value`
+
+### pnpm的项目
+安装之后如果vue版本有问题，使用vue-demi-switch手动切换vue版本

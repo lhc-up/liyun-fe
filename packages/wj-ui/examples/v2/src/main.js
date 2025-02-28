@@ -6,9 +6,10 @@ import store from './store/index.js';
 import 'iview/dist/styles/iview.css';
 import './libs/css/theme/my-theme.less';
 import "./libs/css/public.less";
+import 'liyun-wj-ui/dist/styles/index.css';
 const routers = require("./router.js");
 
-import index from "./views/index.vue";
+import App from "./App.vue";
 import _ from 'lodash';
 Vue.prototype._ = _;
 
@@ -52,7 +53,7 @@ window.WebSiteApp = new Vue({
     router: router,
     store: store,
     render: (h) => {
-        return h(index,{
+        return h(App,{
             props: {
                 firstRouter: firstRouter
             }
