@@ -30,6 +30,24 @@ pnpm add vue-loader3@npm:vue-loader@17 -D
 
 规整依赖
 
-报名scope？
+包名scope？
 
 example工程
+
+
+### v2.7项目中
+`ModuleDependencyError: Can't import the named export 'getCurrentInstance' from non EcmaScript module (only default export is available):undefined`
+在webpack配置文件中增加：
+```js
+{
+    module: {
+        rules: [
+            {
+                test: /\.mjs$/,
+                include: /node_modules/,
+                type: 'javascript/auto',
+            },
+        ],
+    },
+}
+```

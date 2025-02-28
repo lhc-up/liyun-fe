@@ -1,6 +1,6 @@
 {
     "name": "liyun-wj-ui",
-    "version": "0.0.6",
+    "version": "0.0.10",
     "main": "dist/wjui.js",
     "scripts": {
         "dev": "webpack serve --open --hot -c build/webpack.dev.config.js",
@@ -22,7 +22,6 @@
         "not dead"
     ],
     "dependencies": {
-        "is": "^3.3.0",
         "vue-demi": "^0.14.10",
         "vue-router": "^4.5.0"
     },
@@ -36,7 +35,6 @@
         }
     },
     "devDependencies": {
-        "@ant-design/icons-vue": "^7.0.1",
         "@babel/core": "^7.26.0",
         "@babel/plugin-proposal-function-bind": "^7.25.9",
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
@@ -45,10 +43,7 @@
         "@liyun/typescript-config": "workspace:^",
         "@types/node": "^22.13.2",
         "@vue/babel-plugin-jsx": "^1.2.5",
-        "@vue/composition-api": "^1.7.2",
-        "ant-design-vue": "^4.2.6",
         "babel-loader": "^9.2.1",
-        "compression-webpack-plugin": "^11.1.0",
         "core-js": "^3.40.0",
         "css-loader": "^7.1.2",
         "gulp": "^5.0.0",
@@ -65,7 +60,6 @@
         "postcss-loader": "^8.1.1",
         "style-loader": "^4.0.0",
         "ts-loader": "^9.5.2",
-        "uglifyjs-webpack-plugin": "^2.2.0",
         "unplugin-vue2-script-setup": "^0.11.4",
         "vue-loader2": "npm:vue-loader@15",
         "vue-loader3": "npm:vue-loader@17",
@@ -74,7 +68,6 @@
         "vue3": "npm:vue@3",
         "webpack": "^5.98.0",
         "webpack-cli": "^6.0.1",
-        "webpack-dev-server": "^5.2.0",
         "webpack-merge": "^6.0.1"
     }
 }

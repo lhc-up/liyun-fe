@@ -118,8 +118,7 @@ module.exports = {
         }
     },
     optimization: {
-        minimize: false,
-        minimizer: [],
+        minimize: !devMode
     },
     externals: ['vue', 'vue-demi'],
     plugins: [

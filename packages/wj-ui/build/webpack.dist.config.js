@@ -13,7 +13,7 @@ function resolve(dir) {
 
 module.exports = merge(webpackBaseConfig, {
     mode: 'production',
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     entry: {
         main: './src/index.ts'
     },
