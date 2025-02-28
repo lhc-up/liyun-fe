@@ -1,0 +1,110 @@
+@import url( './theme/theme.less');
+//表格最小高度
+.ivu-table .ivu-table-body{
+    min-height:240px;
+}
+.ivu-table{
+    font-size: 14px;
+}
+//表格各单元格左右边距
+.ivu-table-cell{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.ivu-spin-fix{
+    background-color: rgba(255,255,255,0.6) !important;
+}
+/* 表格没有数据时的默认图片 */
+.ivu-table-tip table td span {
+    padding-bottom: 50px;
+    display: inline-block;
+    padding-top: 160px;
+    color: #aaaaaa;
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    min-width: 200px;
+}
+
+.tableInfoBox{
+    position: relative;
+    // margin: 10px 0px 0px;
+    .baseBorder();
+    background-color: #fff;
+    .ivu-table-wrapper{
+        border: 0px;
+    }
+    .ivu-table-border th, .ivu-table-border td{
+        border-color: @borderColor;
+    }
+    .ivu-table-border th:last-child, .ivu-table-border td:last-child{
+        border-right:0px;
+    }
+    .ivu-table:after{
+        width: 0px;
+    }
+    .ivu-table:before{
+        height: 0px;
+    }
+    .ivu-table table{
+        width:calc(~'100% - '0px) !important;
+    }
+    .ivu-table-tip td{
+        border-bottom: 0px;
+        span {
+            width: 100%;
+            padding:0px;
+            display: inline-block;
+            color: #aaaaaa;
+            background-repeat: no-repeat;
+            background-position: center 50%;
+            min-height: 300px;
+        }
+    }
+    .pageBar{
+        position: absolute;
+        bottom: 0px;
+        left:0px;
+        right:0px;
+        height: 70px;
+        text-align: center;
+        padding: 18px 0px;
+        background: #fff;
+    }
+    &.hasDataAndPage{
+        padding-bottom: 70px;
+    }
+}
+// btn
+.ivu-btn {
+    font-size: 14px;
+}
+// alert弹窗
+.ivu-alert {
+    font-size: 12px;
+}
+.ivu-tooltip-inner-with-width{
+    word-break:break-word;
+}
+//modal高度和宽度
+//modal高度和宽度
+.ivu-modal-wrap{
+    display: flex;
+    align-items: center;
+    .ivu-modal{
+        top: 0;
+    }
+}
+.ivu-modal-body {
+    padding: 30px;
+}
+.answerPage {
+    .ivu-message {
+        .ivu-message-notice-content {
+            padding: 30px 30px;
+            font-size: 22px;
+            .ivu-icon::before {
+                font-size: 30px;
+            }
+        }
+    }
+}

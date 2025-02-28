@@ -1,0 +1,420 @@
+//out:false
+@import url('./theme/theme.less');
+@import './animate.css';
+@import './font-awesome.min.css';
+@import "./iviewui.less";
+
+//http://www.bootcss.com/p/font-awesome/#icons-new
+* {
+    box-sizing: border-box;
+    outline: none;
+    transition: background-color ease 200ms;
+    word-break: break-word;
+    line-break: strict;
+}
+
+html,
+body {
+    color: #444;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "Apple LiGothic Medium", "NSimSun", "FontAwesome", "Arial" !important;
+}
+
+input,
+textarea,
+button {
+    outline: none;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "Apple LiGothic Medium", "NSimSun", "FontAwesome", "Arial" !important;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background: #f0f2f5;
+}
+
+a,
+address,
+b,
+big,
+blockquote,
+body,
+center,
+cite,
+code,
+dd,
+del,
+div,
+dl,
+dt,
+em,
+fieldset,
+font,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+ins,
+label,
+legend,
+p,
+pre,
+small,
+span,
+strong,
+u,
+var,
+button {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+form,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+blockquote {
+    margin-left: 30px;
+}
+
+;
+
+ol li {
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+/*选中文字颜色*/
+::selection {
+    background: @themeColor;
+    color: #FFF;
+}
+
+table {
+    table-layout: fixed;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+.hide {
+    display: none;
+}
+
+.clearfix {
+    zoom: 1;
+    clear: both;
+}
+
+.clearfix:after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/*滚动条样式*/
+div::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+div::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+div::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.09);
+}
+
+.specialScroll{
+    overflow: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar-track {
+        border-radius: 3px;
+        background-color: #fff;
+    }
+
+    &::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 0px;
+        background-color: rgba(0, 0, 0, 0.09);
+        border-radius: 3px;
+    }
+}
+table tr th {
+    white-space: nowrap;
+}
+
+//主题内容设置宽度
+.webBody {
+    width: 1100px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.mainBody {
+    width: 100%;
+    position: relative;
+}
+
+.ivu-radio-wrapper,
+.ivu-checkbox-wrapper,
+.ivu-input,
+.ivu-radio-group,
+.ivu-checkbox-group {
+    font-size: 14px;
+    color: #657180;
+}
+
+.optionList,
+.questionInfoBox,
+.questionInfo {
+
+    .ivu-radio-wrapper,
+    .ivu-checkbox-wrapper,
+    .ivu-input,
+    .ivu-radio-group,
+    .ivu-checkbox-group {
+        font-size: 14px;
+        color: @fontColor;
+    }
+}
+
+// 树形控件字体大小
+.ivu-tree-title {
+    font-size: 18px;
+}
+
+.ivu-form {
+    .ivu-form-item-label {
+        font-size: 14px;
+    }
+}
+
+//输入框
+.inputFrameBoxElement {
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid #c5c8ce;
+    margin: 0px 5px;
+    padding: 0px 2px;
+    color: #657180;
+    text-align: center;
+    width: 120px;
+    margin: 2px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    text-emphasis: none;
+
+    &:disabled,
+    &[disabled] {
+        border-color: #dcdcdc;
+        background: #fff;
+    }
+
+    &::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: #ccc !important;
+    }
+
+    &::-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #ccc !important;
+    }
+
+    &:-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #ccc !important;
+    }
+
+    &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #ccc !important;
+    }
+}
+
+// 斜体
+.x-italic {
+    font-style: italic;
+}
+
+.x-not-italic {
+    font-style: normal;
+}
+
+// 着重号
+.x-emphasis {
+    text-emphasis: circle;
+    text-emphasis-position: under left;
+}
+
+.x-not-emphasis {
+    text-emphasis: none;
+}
+
+.rich-html-resource {
+    position: relative;
+    background: #fff;
+    color: #333;
+    text-emphasis: none;
+    font-weight: normal;
+    font-style: normal;
+}
+.rich-html-resource.loading {
+    min-width: 50px;
+    min-height: 50px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        opacity: 1;
+        background-color: @themeColor;
+        animation: loading linear 1s infinite;
+        will-change: transform, opacity;
+    }
+}
+
+//分数
+.scoreFrameBoxElement {
+    display: inline-block;
+    vertical-align: middle;
+
+    .scoreBox {
+        display: flex;
+        flex-direction: column;
+        min-width: 20px;
+        font-size: 12px;
+        text-align: center;
+
+        .upDom {
+            line-height: 12px;
+            padding-bottom: 2px;
+        }
+
+        .lineDom {
+            width: 100%;
+            height: 1px;
+            background: #444;
+        }
+
+        .downDom {
+            line-height: 12px;
+            padding-top: 2px;
+        }
+    }
+}
+
+table td .inputFrameBoxElement {
+    max-width: calc(100% - 4px);
+}
+
+.content {
+    .mask {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.0);
+    }
+
+    .imageBox {
+        margin: 10px 0px;
+        display: block;
+    }
+
+    .imgList {
+        width: 80px;
+        float: left;
+        text-align: center;
+        margin-right: 15px;
+        position: relative;
+
+        .img {
+            width: 80px;
+            height: 60px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 1px solid #E8EAEC;
+            cursor: pointer;
+        }
+
+        .imgIndex {
+            color: #657180;
+            font-size: 12px;
+            line-height: 10px;
+        }
+    }
+}
+
+//各个工具条之间的间距
+.barBottomMargin {
+    margin-bottom: 15px;
+}
+@keyframes loading {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+[style*="vertical-align: super"],
+[style*="vertical-align: sub"] {
+    text-indent: 0;
+}

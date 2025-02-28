@@ -1,0 +1,61 @@
+//系统主题变量
+@fontColor: #333;
+@borderColor: #dcdcdc;
+@themeColor: #27ab7b; //主题色
+@themeFontColor: #ffffff; //主题字体色
+@themeHoverColor: shade(@themeColor, 15%); //主题焦点色
+@infoThemeColor: #90949a; //信息主题色
+@infoThemeFontColor: #ffffff;
+@infoThemeHoverColor: #90949a;
+@successThemeColor: #80be57; //成功主题色
+@successThemeFontColor: #ffffff;
+@successThemeHoverColor: #80be57;
+@warningThemeColor: #dba358; //警告主题色
+@warningThemeFontColor: #ffffff;
+@warningThemeHoverColor: #dba358;
+@errorThemeColor: #F5222D; //错误主题色
+@errorThemeFontColor: #ffffff;
+@errorThemeHoverColor: #F5222D;
+
+@mainSpace: 16px; //主要边距
+@stemColor: #333;//题干
+
+//边框
+.baseBorder() {
+    border: 1px @borderColor solid;
+}
+
+.baseBorder(@direction, @borderWidth: 1px, @color: @borderColor) {
+    border@{direction}: @borderWidth @color solid;
+}
+
+.baseBorderHover() {
+    border: 1px @themeHoverColor solid;
+}
+
+.baseBorderHover(@direction, @borderWidth: 1px, @color: @themeHoverColor) {
+    .baseBorder(@direction, @borderWidth, @color);
+}
+
+//阴影
+
+.shadow(@color: rgba(0, 0, 0, 0.08)) {
+    -webkit-box-shadow: 0 2px 8px @color;
+    -ms-box-shadow: 0 2px 8px @color;
+    -o-box-shadow: 0 2px 8px @color;
+    box-shadow: 0 2px 8px @color;
+}
+
+.smallShadow(@color: rgba(0, 0, 0, 0.05)) {
+    -webkit-box-shadow: 0 2px 4px @color;
+    -ms-box-shadow: 0 2px 4px @color;
+    -o-box-shadow: 0 2px 4px @color;
+    box-shadow: 0 2px 4px @color;
+}
+
+.bigShadow(@color: rgba(0, 0, 0, 0.1)) {
+    -webkit-box-shadow: 0 2px 12px @color;
+    -ms-box-shadow: 0 2px 12px @color;
+    -o-box-shadow: 0 2px 12px @color;
+    box-shadow: 0 2px 12px @color;
+}
