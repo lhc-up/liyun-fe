@@ -18,9 +18,10 @@ module.exports = merge(webpackBaseConfig, {
         main: './src/index.ts'
     },
     output: {
+        clean: true,
         path: path.resolve(__dirname, '../dist', isVue2? 'v2' : 'v3'),
         publicPath: `/dist/${isVue2 ? 'v2' : 'v3'}/`,
-        filename: 'wjui.js',
+        filename: 'wjui.min.js',
         library: 'wjui',
         libraryTarget: 'umd',
         umdNamedDefine: true

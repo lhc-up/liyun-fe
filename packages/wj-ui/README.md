@@ -22,13 +22,13 @@ pnpm add vue3@npm:vue@3 -D
 pnpm add vue-loader2@npm:vue-loader@15 -D
 pnpm add vue-loader3@npm:vue-loader@17 -D
 
-分别打包出v2和v3版本，使用方按需引入
+- [x] 分别打包出v2和v3版本，使用方按需引入
 
-修改package.json，暴露v2、v3，方便使用时引入
+- [x] 修改package.json，暴露v2、v3，方便使用时引入
 
 导出类型？
 
-规整依赖
+- [x] 规整依赖
 
 包名scope？
 
@@ -51,3 +51,9 @@ example工程
     },
 }
 ```
+
+### 语法注意
+- `Fragment、Transition、TransitionGroup、Teleport、Suspense、KeepAlive、hasInjectionContext` ???
+
+#### 模版语法
+- `v-model:value`

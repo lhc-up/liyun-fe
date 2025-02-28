@@ -1,6 +1,6 @@
-import { resolveModule } from 'local-pkg';
-import fs from 'node:fs/promises';
-import { isVue2 } from 'vue-demi';
+const { resolveModule } = require('local-pkg');
+const fs = require('fs');
+const { isVue2 } = require('vue-demi');
 
 /**
  * vue-template-compiler会检查当前项目内的vue版本，如果和自己的版本不匹配，则会报错
@@ -10,9 +10,9 @@ import { isVue2 } from 'vue-demi';
 const patch = async () => {
     const packagePath = await resolveModule('vue-template-compiler');
     if (!packagePath) return console.log('vue-template-compiler not found');
-    const content = await fs.readFile(packagePath, 'utf8');
+    const content = fs.readFileSync(packagePath, 'utf-8');
     try {
-        await fs.writeFile(
+        fs.writeFileSync(
             packagePath,
             content.replace(
                 "require('vue').version",

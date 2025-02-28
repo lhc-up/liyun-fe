@@ -1,18 +1,19 @@
 {
     "name": "liyun-wj-ui",
-    "version": "0.0.10",
-    "main": "dist/wjui.js",
+    "version": "0.0.12",
+    "main": "dist/wjui.min.js",
+    "module": "dist/wjui.min.js",
     "scripts": {
         "dev": "webpack serve --open --hot -c build/webpack.dev.config.js",
         "build": "webpack --config build/webpack.dev.config.js",
-        "patch": "node ./scripts/patch-pkg.mjs",
+        "patch": "node ./scripts/patch-pkg.js",
         "switch:v2": "vue-demi-switch 2 vue2",
         "switch:v3": "vue-demi-switch 3 vue3",
         "dist:style": "gulp --gulpfile build/build-style.mjs",
         "dist:v2": "npm run switch:v2 && npm run patch && webpack --config build/webpack.dist.config.js",
         "dist:v3": "npm run switch:v3 && npm run patch && webpack --config build/webpack.dist.config.js",
         "dist": "npm run dist:v2 && npm run dist:v3 && npm run dist:style",
-        "postinstall": "node ./scripts/postinstall.mjs",
+        "postinstall": "node ./scripts/postinstall.js",
         "prepare": "npm run dist"
     },
     "browserslist": [
