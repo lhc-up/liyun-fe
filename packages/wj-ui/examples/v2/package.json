@@ -69,7 +69,6 @@
     },
     "dependencies": {
         "@vue/composition-api": "^1.7.2",
-        "liyun-wj-ui": "^0.0.12",
         "vue-demi": "^0.14.10"
     }
 }

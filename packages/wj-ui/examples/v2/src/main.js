@@ -6,7 +6,7 @@ import store from './store/index.js';
 import 'iview/dist/styles/iview.css';
 import './libs/css/theme/my-theme.less';
 import "./libs/css/public.less";
-import 'liyun-wj-ui/dist/styles/index.css';
+import '../../../dist/styles/index.css';
 const routers = require("./router.js");
 
 import App from "./App.vue";

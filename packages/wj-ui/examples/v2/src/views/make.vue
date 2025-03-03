@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-import { Menu } from 'liyun-wj-ui';
+import { Menu } from '../../../../dist/v2/wjui.min.js';
 export default {
     name: 'make',
     data() {

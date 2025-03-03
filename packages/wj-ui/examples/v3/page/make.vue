@@ -16,7 +16,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { Menu, DropArea, AddQuestion } from '@liyun/wj-ui';
+import { Menu, DropArea, AddQuestion } from '../../../dist/v3/wjui.min.js';
 import Drawer from '../components/drawer.vue';
 </script>
 <style lang="less" scoped>
