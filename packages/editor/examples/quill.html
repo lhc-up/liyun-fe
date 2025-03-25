@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quill</title>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            position: relative;
+            width: calc(100% - 60px);
+            height: 300px;
+            margin: 30px auto 0;
+            border: 1px solid red;
+        }
+
+        #toolbar {
+            /* position: absolute; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="toolbar"></div>
+        <div id="editor"></div>
+    </div>
+</body>
+<script>
+    console.log('a', sessionStorage.getItem('a'));
+    const quill = new Quill('#editor', {
+        debug: 'info',
+        placeholder: 'Compose an epic...',
+        theme: 'snow',
+        scrollingContainer: '#container',
+        modules: {
+            toolbar: true,
+            // toolbar: {
+            //     container: '#toolbar', // Selector for toolbar container
+            //     handlers: {
+            //         // bold: customBoldHandler
+            //     }
+            // }
+        },
+    });
+</script>
+
+</html>

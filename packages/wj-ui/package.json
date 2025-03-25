@@ -1,5 +1,5 @@
 {
-    "name": "liyun-wj-ui",
+    "name": "@liyun/wj-ui",
     "version": "0.0.12",
     "main": "dist/wjui.min.js",
     "module": "dist/wjui.min.js",
