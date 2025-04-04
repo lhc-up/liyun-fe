@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vxe-pc-ui@3.4.15/lib/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vxe-table@3.13.26/lib/style.min.css">
+    <!-- 引入vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <!-- 引入组件 -->
+    <script src="https://cdn.jsdelivr.net/npm/xe-utils@3.7.4/dist/xe-utils.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vxe-pc-ui@3.4.15/lib/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vxe-table@3.13.26/lib/index.umd.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 添加一个按钮用于动态隐藏列 -->
+        <button @click="toggleColumnVisibility">Toggle Sex Column</button>
+        <vxe-toolbar ref="toolbarRef" custom></vxe-toolbar>
+        <vxe-table ref="tableRef" border :custom-config="customConfig" :data="tableData" :merge-cells="mergeCells">
+            <vxe-column field="seq" type="seq" width="70"></vxe-column>
+            <vxe-column field="name" title="Name"></vxe-column>
+            <vxe-column field="sex" title="Sex"></vxe-column>
+            <vxe-column field="age" title="Age"></vxe-column>
+        </vxe-table>
+    </div>
+    <script>
+        (function () {
+            var App = {
+                data() {
+                    const tableData = [
+                        { id: 10001, name: 'Test1', role: 'Develop', sex: 'Man', age: 28, address: 'test abc' },
+                        { id: 10002, name: 'Test2', role: 'Test', sex: 'Women', age: 22, address: 'Guangzhou' },
+                        { id: 10003, name: 'Test3', role: 'PM', sex: 'Man', age: 32, address: 'Shanghai' },
+                        { id: 10004, name: 'Test4', role: 'Designer', sex: 'Women', age: 24, address: 'Shanghai' }
+                    ];
+                    const mergeCells = [
+                        { row: 0, col: 3, rowspan: 2, colspan: 2 },
+                        { row: 1, col: 1, rowspan: 3, colspan: 2 }
+                    ];
+                    const customConfig = {
+                        immediate: true,
+                        visibleMethod({ column }) {
+                            return column.field !== 'seq';
+                        }
+                    };
+                    return {
+                        tableData,
+                        mergeCells,
+                        customConfig,
+                        isSexColumnVisible: true // 用于控制列的显示状态
+                    };
+                },
+                methods: {
+                    toggleColumnVisibility() {
+                        const $table = this.$refs.tableRef;
+                        if ($table) {
+                            const hiddenField = 'sex';
+                            const isHidden = !this.isSexColumnVisible;
+                            const columnIndex = $table.getFullColumns().findIndex(col => col.field === hiddenField);
+                            if (columnIndex!== -1) {
+                                this.mergeCells = this.adjustMergeCells(this.mergeCells, columnIndex, isHidden);
+                            }
+                            this.isSexColumnVisible = !this.isSexColumnVisible;
+                            if (this.isSexColumnVisible) {
+                                $table.showColumn(hiddenField);
+                            } else {
+                                $table.hideColumn(hiddenField);
+                            }
+                            // 重新设置 data 和 mergeCells 触发重新渲染
+                            this.tableData = [...this.tableData];
+                            this.mergeCells = [...this.mergeCells];
+                        }
+                    },
+                    adjustMergeCells(mergeCells, hiddenColumnIndex, isHidden) {
+                        return mergeCells.map(cell => {
+                            const newCell = { ...cell };
+                            // 如果合并单元格的起始列在隐藏列之后，列索引减 1
+                            if (newCell.col > hiddenColumnIndex) {
+                                newCell.col--;
+                            }
+                            // 如果合并单元格的范围包含隐藏列
+                            if (newCell.col <= hiddenColumnIndex && newCell.col + newCell.colspan > hiddenColumnIndex) {
+                                newCell.colspan--;
+                            }
+                            return newCell;
+                        }).filter(cell => cell.colspan > 0); // 过滤掉合并列数为 0 的无效合并单元格
+                    }
+                },
+                mounted() {
+                    const $table = this.$refs.tableRef;
+                    const $toolbar = this.$refs.toolbarRef;
+                    if ($table && $toolbar) {
+                        $table.connect($toolbar);
+                    }
+                }
+            };
+            new Vue(App).$mount('#app');
+        })();
+    </script>
+</body>
+
+</html>
