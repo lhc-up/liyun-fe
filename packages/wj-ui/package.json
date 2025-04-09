@@ -4,9 +4,9 @@
     "main": "dist/wjui.min.js",
     "module": "dist/wjui.min.js",
     "scripts": {
-        "dev": "webpack serve --open --hot -c build/webpack.dev.config.js",
+        "dev": "npm run dev:v2",
         "dev:v2": "pnpm -C examples/v2 dev",
-        "build": "webpack --config build/webpack.dev.config.js",
+        "dev:v3": "pnpm -C examples/v3 dev",
         "patch": "node ./scripts/patch-pkg.js",
         "switch:v2": "vue-demi-switch 2 vue2",
         "switch:v3": "vue-demi-switch 3 vue3",
@@ -24,8 +24,7 @@
         "not dead"
     ],
     "dependencies": {
-        "vue-demi": "^0.14.10",
-        "vue-router": "^4.5.0"
+        "vue-demi": "^0.14.10"
     },
     "peerDependencies": {
         "@vue/composition-api": "^1.7.2",
@@ -65,6 +64,7 @@
         "unplugin-vue2-script-setup": "^0.11.4",
         "vue-loader2": "npm:vue-loader@15",
         "vue-loader3": "npm:vue-loader@17",
+        "vue-router": "^4.5.0",
         "vue-template-compiler": "^2.7.16",
         "vue2": "npm:vue@2",
         "vue3": "npm:vue@3",
