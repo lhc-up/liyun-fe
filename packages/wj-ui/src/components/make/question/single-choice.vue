@@ -1,5 +1,6 @@
 <template>
     <div :class="classes">单选题</div>
+    <!-- header组件封装？ -->
 </template>
 <script setup lang="ts">
 import { computed } from 'vue-demi';

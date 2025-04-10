@@ -26,7 +26,8 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                include: path.resolve(__dirname, '../src'),
+                // include: path.resolve(__dirname, '../src'),
+                exclude: /node_modules/,
                 use: [
                     {
                         loader: 'thread-loader',
@@ -45,7 +46,8 @@ module.exports = {
             },
             {
                 test: /\.tsx?$/,
-                include: path.resolve(__dirname, '../src'),
+                // include: path.resolve(__dirname, '../src'),
+                exclude: /node_modules/,
                 use: [
                     {
                         loader: 'thread-loader',
@@ -150,6 +152,9 @@ module.exports = {
         fallback: {
             url: require.resolve('url')
         },
+        alias: {
+            '@liyun/wj-ui': path.resolve(__dirname, '../../../src'),
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({

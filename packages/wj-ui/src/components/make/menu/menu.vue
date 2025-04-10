@@ -51,7 +51,7 @@ const onDragstart = (menu, e) => {
         ...menu,
     }));
 }
-const onDragend = e => {
+const onDragend = () => {
     if (props.disabled || !props.dragable) return;
 }
 

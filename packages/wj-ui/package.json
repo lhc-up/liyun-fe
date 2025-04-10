@@ -4,9 +4,9 @@
     "main": "dist/wjui.min.js",
     "module": "dist/wjui.min.js",
     "scripts": {
-        "dev": "npm run dev:v2",
-        "dev:v2": "pnpm -C examples/v2 dev",
-        "dev:v3": "pnpm -C examples/v3 dev",
+        "dev": "npm run dev:v3",
+        "dev:v2": "npm run switch:v2 && pnpm -C examples/v2 dev",
+        "dev:v3": "npm run switch:v3 && pnpm -C examples/v3 dev",
         "patch": "node ./scripts/patch-pkg.js",
         "switch:v2": "vue-demi-switch 2 vue2",
         "switch:v3": "vue-demi-switch 3 vue3",

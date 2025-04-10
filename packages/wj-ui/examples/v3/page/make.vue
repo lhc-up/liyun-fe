@@ -4,7 +4,7 @@
             <Menu></Menu>
         </div>
         <div class="main">
-            <DropArea fixed>
+            <DropArea fixed @on-drop="onDrop" :dataType="DragTypeEnum.QuestionMenu">
                 <!-- 单题预览 -->
                 <!-- 多题预览，支持拖拽排序、插入 -->
             </DropArea>
@@ -16,8 +16,12 @@
     </div>
 </template>
 <script setup lang="ts">
-import { Menu, DropArea, AddQuestion } from '../../../dist/v3/wjui.min.js';
+import { Menu, DropArea, AddQuestion } from '@liyun/wj-ui';
+import { DragTypeEnum } from '@liyun/wj-ui/enums/event';
 import Drawer from '../components/drawer.vue';
+const onDrop = (d) => {
+    console.log(d)
+}
 </script>
 <style lang="less" scoped>
 .make {
