@@ -76,6 +76,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
+                    'css-hot-loader',
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
@@ -95,6 +96,7 @@ module.exports = {
                 test: /\.less$/,
                 exclude: [/\.lazy\.less$/i],
                 use: [
+                    'css-hot-loader',
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
@@ -167,10 +169,8 @@ module.exports = {
             cache: true,
         }),
         new MiniCssExtractPlugin({
-            filename: `css/[name]${devMode ? '' : '.[contenthash:8]'}.css`,
-            chunkFilename: `css/[name]${
-                devMode ? '' : '.[contenthash:8]'
-            }.css`,
+            filename: `css/[name].css`,
+            chunkFilename: `css/[name].css`,
             ignoreOrder: true
         }),
         new VueLoaderPlugin(),

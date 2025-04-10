@@ -1,5 +1,14 @@
 <template>
-    <div :class="classes">单选题</div>
+    <div :class="classes">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="questionTitle">题目</label>
+                    <input type="text" class="form-control" id="questionTitle" placeholder="请输入题目">
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- header组件封装？ -->
 </template>
 <script setup lang="ts">
