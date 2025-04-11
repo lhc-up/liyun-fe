@@ -70,6 +70,7 @@ module.exports = {
                             sourceMap: true,
                         },
                     },
+                    'postcss-loader',
                 ]
             },
             {
@@ -87,7 +88,7 @@ module.exports = {
                             sourceMap: true,
                         },
                     },
-                    "postcss-loader",
+                    'postcss-loader',
                     {
                         loader: "less-loader",
                         options: {

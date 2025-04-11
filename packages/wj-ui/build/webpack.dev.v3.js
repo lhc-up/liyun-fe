@@ -5,7 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const fs = require('fs');
 const threads = require('os').cpus().length;
-const { VueLoaderPlugin } = require('vue-loader');
+const { VueLoaderPlugin } = require('vue-loader3');
 const webpack = require('webpack');
 const chalk = require('chalk');
 const devMode = process.env.NODE_ENV === 'development';
@@ -13,16 +13,16 @@ const devMode = process.env.NODE_ENV === 'development';
 module.exports = {
     mode: 'development',
     entry: {
-        main: './main.ts'
+        main: './examples/v3/main.ts'
     },
     output: {
-        path: path.join(__dirname, '../dist'),
+        path: path.join(__dirname, '../examples/v3/dist'),
     },
     module: {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader3'
             },
             {
                 test: /\.js$/,
@@ -155,13 +155,14 @@ module.exports = {
             url: require.resolve('url')
         },
         alias: {
-            '@liyun/wj-ui': path.resolve(__dirname, '../../../src'),
+            '@liyun/wj-ui': path.resolve(__dirname, '../src'),
+            '@': path.resolve(__dirname, '../src'),
         }
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html',
-            filename: `./index.html`,
+            template: 'examples/v3/index.html',
+            filename: `index.html`,
             inject: 'body',
             favicon: false,
             hash: !devMode,

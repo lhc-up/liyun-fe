@@ -10,9 +10,9 @@
             </DropArea>
         </div>
         <!-- 出题抽屉 -->
-        <Drawer>
+        <!-- <Drawer>
             <AddQuestion></AddQuestion>
-        </Drawer>
+        </Drawer> -->
     </div>
 </template>
 <script setup lang="ts">

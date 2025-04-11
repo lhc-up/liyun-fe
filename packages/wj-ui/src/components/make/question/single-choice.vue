@@ -1,11 +1,17 @@
 <template>
     <div :class="classes">
-        <div class="row">
-            <div class="col-12">
-                <div class="form-group">
-                    <label for="questionTitle">题目</label>
-                    <input type="text" class="form-control" id="questionTitle" placeholder="请输入题目">
-                </div>
+        <div class="flex">
+            <div class="w-1/3">
+                <span>题号：</span>
+                <input placeholder="请输入题号" />
+            </div>
+            <div class="w-1/3">
+                <span>每行显示列数：</span>
+                <input placeholder="请输入题号" />
+            </div>
+            <div class="w-1/3">
+                <span>必填：</span>
+                <input placeholder="请输入题号" />
             </div>
         </div>
     </div>
