@@ -1,6 +1,6 @@
 <template>
     <div :class="classes">
-        <div class="flex">
+        <div :class="`${prefixCls}-row`">
             <div class="w-1/3">
                 <span>题号：</span>
                 <input placeholder="请输入题号" />

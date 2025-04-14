@@ -5,11 +5,11 @@
             @dragstart="onDragstart(menu, $event)"
             @dragend="onDragend"
             :key="menu.value"
-            :class="`${prefixCls}-item`"
+            :class="`${prefixCls}-c`"
             :disabled="disabled"
             :draggable="!disabled && dragable">
-            <div :class="[`${prefixCls}-item-icon`, `${prefixCls}-item-icon-${menu.value}`]"></div>
-            <div :class="`${prefixCls}-item-text`">{{ QuestionNameMap[menu.value] }}</div>
+            <div :class="[`${prefixCls}-c-icon`, `${prefixCls}-c-icon-${menu.value}`]"></div>
+            <div :class="`${prefixCls}-c-text`">{{ QuestionNameMap[menu.value] }}</div>
         </div>
     </div>
 </template>
